@@ -1,5 +1,7 @@
 import React from "react";
-import useJsonFetch from "../useJsonFetch/useJsonFetch";
+import PropTypes from "prop-types";
+
+import useJsonFetch from "../../hooks/useJsonFetch/useJsonFetch";
 
 function HookJsonFetch({ url }) {
   const [data, loading, error] = useJsonFetch(url);
@@ -11,5 +13,9 @@ function HookJsonFetch({ url }) {
     </div>
   );
 }
+
+HookJsonFetch.propTypes = {
+  url: PropTypes.string,
+};
 
 export default HookJsonFetch;

@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import HookJsonFetch from "./components/HookJsonFetch";
+import HookJsonFetch from "./components/HookJsonFetch/HookJsonFetch";
 
 function App() {
   return (

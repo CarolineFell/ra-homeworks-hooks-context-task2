@@ -10,12 +10,13 @@ const useJsonFetch = (url, opts) => {
       setLoading(true);
       try {
         const response = await fetch(url);
-        if (!response.ok) throw new Error(response.statusText);
         const data = await response.json();
-        setData(data);
-        setError(null);
-      } catch (err) {
-        setError(err);
+        if (response.ok) {
+          setData(data.status);
+          setError(null);
+        }
+      } catch (error) {
+        setError(error);
       } finally {
         setLoading(false);
       }
